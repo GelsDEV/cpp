@@ -9,8 +9,8 @@ private:
     std::vector<std::vector<char>> data_; // Enthält die Labyrinth-Daten
 
 public:
-    Maze(int rows, int cols, const std::vector<std::vector<char>>& data)
-        : rows_(rows), cols_(cols), data_(data) {}
+    Maze(int rows, int cols, std::vector<std::vector<char>> data)
+        : rows_(rows), cols_(cols), data_(std::move(data)) {}
 
     int getRows() const { return rows_; }
     int getCols() const { return cols_; }
